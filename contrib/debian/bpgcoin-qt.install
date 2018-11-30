@@ -1,0 +1,6 @@
+usr/local/bin/predatorcoin-qt usr/bin
+share/pixmaps/predatorcoin32.xpm usr/share/pixmaps
+share/pixmaps/predatorcoin16.xpm usr/share/pixmaps
+share/pixmaps/predatorcoin128.png usr/share/pixmaps
+debian/predatorcoin-qt.desktop usr/share/applications
+debian/predatorcoin-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,11 @@
+[Protocol]
+exec=predatorcoin-qt '%u'
+protocol=predatorcoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=PRDCoin
+Comment=PRDCoin P2P Cryptocurrency
+Comment[fr]=PRDCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=PRDCoin, eşten eşe kriptografik sanal para birimi
+Exec=predatorcoin-qt %u
+Terminal=false
+Type=Application
+Icon=predatorcoin128
+MimeType=x-scheme-handler/predatorcoin;
+Categories=Office;Finance;
