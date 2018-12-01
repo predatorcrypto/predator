@@ -1230,17 +1230,27 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
 
-    CAmount nSubsidyBase;
+   CAmount nSubsidyBase;
 
     if (nPrevHeight == 0) {
       nSubsidyBase = 1500000;
-    } else if (nPrevHeight <= 100 && nPrevHeight >= 1) {
+    } else if (nPrevHeight <= 350 && nPrevHeight >= 1) {
       nSubsidyBase = 40;
-    } else if (nPrevHeight >= 80000) {
+    } else if (nPrevHeight <= 1000 && nPrevHeight >= 351) {
+      nSubsidyBase = 40;
+    } else if (nPrevHeight <= 20000 && nPrevHeight >= 1001) {
+      nSubsidyBase = 40;
+    } else if (nPrevHeight <= 45000 && nPrevHeight >= 20001) {
+      nSubsidyBase = 40;
+    } else if (nPrevHeight <= 68000 && nPrevHeight >= 45001) {
+      nSubsidyBase = 40;
+    } else if (nPrevHeight <= 69000 && nPrevHeight >= 68001) {
+      nSubsidyBase = 40;
+    } else if (nPrevHeight >= 69001) {
       nSubsidyBase = 40;
 
       for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidyBase -= (nSubsidyBase/100)*50;
+        nSubsidyBase -= (nSubsidyBase/100)*25;
       }
     }
 
@@ -1255,14 +1265,21 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     ret = 0;
     if (nHeight <= 1000 && nHeight >= 351) {
       ret = (blockValue/100)*50;
-    } else if (nHeight <= 100 && nHeight >= 1) {
+    } else if (nHeight <= 20000 && nHeight >= 1001) {
       ret = (blockValue/100)*50;
-    } else if (nHeight >= 80000) {
+    } else if (nHeight <= 45000 && nHeight >= 20001) {
+      ret = (blockValue/100)*50;
+    } else if (nHeight <= 68000 && nHeight >= 45001) {
+      ret = (blockValue/100)*50;
+    } else if (nHeight <= 69000 && nHeight >= 68001) {
+      ret = (blockValue/100)*50;
+    } else if (nHeight >= 69001) {
       ret = (blockValue/100)*50;
     }
 
     return ret;
 }
+
 
 bool IsInitialBlockDownload()
 {
